@@ -12,6 +12,12 @@ data class Comment(
 
 class PostNotFoundException(message: String) : RuntimeException(message)
 
+class CommentNotFoundException(message: String) : RuntimeException(message)
+
+class OwnerNotFoundException(message: String) : RuntimeException(message)
+
+class ReasonNotFoundException(message: String) : RuntimeException(message)
+
 data class Post(
     val id: Int = 0,
     val ownerId: Int,
@@ -24,6 +30,14 @@ data class Post(
     val isPinned: Boolean = false,
     val isFavorite: Boolean = false,
     val attachments: MutableList<Attachment> = mutableListOf()
+)
+
+data class Report(
+    val id:Int,
+    val postId: Int,
+    val ownerId: Int,
+    val commentId: Int,
+    val reason: Int
 )
 
 data class Attachment(
