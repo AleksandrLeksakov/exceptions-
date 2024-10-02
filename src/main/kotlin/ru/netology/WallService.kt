@@ -62,7 +62,7 @@ class WallService {
             it == reason
         }
         if (findReason == null) {
-            throw ReasonNotFoundException("Reason $reason not found")
+            throw ReasonNotFoundException("Причина $reason не найдена")
 
         }
         // Добавляем жалобу в список жалоб
